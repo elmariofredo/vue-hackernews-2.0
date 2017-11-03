@@ -1,5 +1,5 @@
 <template>
-  <div class="news-view">
+  <ole-section>
     <div class="news-list-nav">
       <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
       <a v-else class="disabled">&lt; prev</a>
@@ -7,15 +7,11 @@
       <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
       <a v-else class="disabled">more &gt;</a>
     </div>
-    <transition :name="transition">
-      <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
-        <transition-group tag="ul" name="item">
-          <item v-for="item in displayedItems" :key="item.id" :item="item">
-          </item>
-        </transition-group>
-      </div>
-    </transition>
-  </div>
+    <ole-container :key="displayedPage" v-if="displayedPage > 0">
+      <item v-for="item in displayedItems" :key="item.id" :item="item">
+      </item>
+    </ole-container>
+  </ole-section>
 </template>
 
 <script>
