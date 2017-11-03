@@ -1,20 +1,28 @@
 <template>
   <div id="app">
-    <header class="header">
-      <nav class="inner">
-        <router-link to="/" exact>
-          <img class="logo" src="~public/logo-48.png" alt="logo">
-        </router-link>
-        <router-link to="/top">Top</router-link>
-        <router-link to="/new">New</router-link>
-        <router-link to="/show">Show</router-link>
-        <router-link to="/ask">Ask</router-link>
-        <router-link to="/job">Jobs</router-link>
-        <a class="github" href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">
-          Built with Vue.js
-        </a>
-      </nav>
-    </header>
+    <ole-navbar href="/">
+      <img class="logo" src="~public/logo-48.png" alt="logo" width="112"
+        height="28"/>
+      <ole-navbar-item slot="navbar-start" href="/top">
+        Top
+      </ole-navbar-item>
+      <ole-navbar-item slot="navbar-start" href="/new">
+        New
+      </ole-navbar-item>
+      <ole-navbar-item slot="navbar-start" href="/show">
+        Show
+      </ole-navbar-item>
+      <ole-navbar-item slot="navbar-start" href="/ask">
+        Ask
+      </ole-navbar-item>
+      <ole-navbar-item slot="navbar-start" href="/job">
+        Jobs
+      </ole-navbar-item>
+      <ole-navbar-item href="https://github.com/vuejs/vue-hackernews-2.0">
+        <ole-icon type="github" style="color: #333;"></ole-icon>
+      </ole-navbar-item>
+
+    </ole-navbar>
     <ole-section>
       <router-view class="view"></router-view>
     </ole-section>
