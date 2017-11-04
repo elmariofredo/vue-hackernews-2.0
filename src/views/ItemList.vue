@@ -1,6 +1,16 @@
 <template>
   <ole-section>
-    <ole-columns>
+      <ole-column>
+        <transition :name="transition">
+          <ole-container :key="displayedPage" v-if="displayedPage > 0">
+            <transition-group name="item">
+              <item v-for="item in displayedItems" :key="item.id" :item="item">
+              </item>
+            </transition-group>
+          </ole-container>
+        </transition>
+      </ole-column>
+
       <ole-column>
         <ole-pagination>
           <router-link tag="ole-pagination-link" v-if="page > 1" :to="'/' + type + '/' + (page - 1)">
@@ -14,11 +24,6 @@
           </router-link>
         </ole-pagination>
       </ole-column>
-    </ole-columns>
-    <ole-container :key="displayedPage" v-if="displayedPage > 0">
-      <item v-for="item in displayedItems" :key="item.id" :item="item">
-      </item>
-    </ole-container>
   </ole-section>
 </template>
 

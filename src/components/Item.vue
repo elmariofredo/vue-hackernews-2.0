@@ -1,8 +1,7 @@
 <template>
-  <ole-columns>
     <ole-column>
       <ole-box>
-        <div slot="left" class="score">{{ item.score }}</div>
+        <div slot="left">{{ item.score }}</div>
         <div class="news-item">
           <span class="title">
             <template v-if="item.url">
@@ -28,7 +27,6 @@
         </span>
       </ole-box>
     </ole-column>
-  </ole-columns>
 </template>
 
 <script>

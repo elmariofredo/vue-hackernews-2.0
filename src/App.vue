@@ -4,28 +4,28 @@
       <img class="logo" src="~public/logo-48.png" alt="logo" width="112"
         height="28"/>
       <ole-navbar-item slot="navbar-start" href="/top">
-        Top
+        <router-link to="/top">Top</router-link>
       </ole-navbar-item>
       <ole-navbar-item slot="navbar-start" href="/new">
-        New
+        <router-link to="/new">New</router-link>
       </ole-navbar-item>
       <ole-navbar-item slot="navbar-start" href="/show">
-        Show
+        <router-link to="/show">Show</router-link>
       </ole-navbar-item>
       <ole-navbar-item slot="navbar-start" href="/ask">
-        Ask
+        <router-link to="/ask">Ask</router-link>
       </ole-navbar-item>
       <ole-navbar-item slot="navbar-start" href="/job">
-        Jobs
+        <router-link to="/job">Jobs</router-link>
       </ole-navbar-item>
       <ole-navbar-item href="https://github.com/vuejs/vue-hackernews-2.0">
         <ole-icon type="github" style="color: #333;"></ole-icon>
       </ole-navbar-item>
 
     </ole-navbar>
-    <ole-section>
+    <transition name="fade" mode="out-in">
       <router-view class="view"></router-view>
-    </ole-section>
+    </transition>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ body
   font-size 15px
   background-color lighten(#eceef1, 30%)
   margin 0
-  padding-top 55px
+  // padding-top 55px
   color #34495e
   overflow-y scroll
 
