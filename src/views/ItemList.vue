@@ -11,19 +11,14 @@
         </transition>
       </ole-column>
 
-      <ole-column>
         <ole-pagination>
           <router-link tag="ole-pagination-link" v-if="page > 1" :to="'/' + type + '/' + (page - 1)">
             Prev
           </router-link>
-          <ole-pagination-link current disabled>{{ page }}</ole-pagination-link>
-          <ole-pagination-ellipsis></ole-pagination-ellipsis>
-          <ole-pagination-link>{{ maxPage }}</ole-pagination-link>
           <router-link tag="ole-pagination-link" v-if="hasMore" :to="'/' + type + '/' + (page + 1)">
             Next
           </router-link>
         </ole-pagination>
-      </ole-column>
   </ole-section>
 </template>
 
