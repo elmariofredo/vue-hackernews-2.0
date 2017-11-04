@@ -1,25 +1,20 @@
 <template>
-  <ole-section>
-      <ole-column>
-        <transition :name="transition">
-          <ole-container :key="displayedPage" v-if="displayedPage > 0">
-            <transition-group name="item">
-              <item v-for="item in displayedItems" :key="item.id" :item="item">
-              </item>
-            </transition-group>
-          </ole-container>
-        </transition>
-      </ole-column>
-
-        <ole-pagination>
-          <router-link tag="ole-pagination-link" v-if="page > 1" :to="'/' + type + '/' + (page - 1)">
-            Prev
-          </router-link>
-          <router-link tag="ole-pagination-link" v-if="hasMore" :to="'/' + type + '/' + (page + 1)">
-            Next
-          </router-link>
-        </ole-pagination>
-  </ole-section>
+  <div>
+    <transition :name="transition">
+      <transition-group name="item">
+        <item v-for="item in displayedItems" :key="item.id" :item="item">
+        </item>
+      </transition-group>
+    </transition>
+    <ole-pagination>
+      <router-link tag="ole-pagination-link" v-if="page > 1" :to="'/' + type + '/' + (page - 1)">
+        Prev
+      </router-link>
+      <router-link tag="ole-pagination-link" v-if="hasMore" :to="'/' + type + '/' + (page + 1)">
+        Next
+      </router-link>
+    </ole-pagination>
+  </div>
 </template>
 
 <script>
