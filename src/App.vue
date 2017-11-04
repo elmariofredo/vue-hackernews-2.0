@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <ole-navbar href="/">
-      <img class="logo" src="~public/logo-48.png" alt="logo" width="112"
-        height="28"/>
+      <img class="logo" src="~public/hc-logo.png" alt="logo"/>
       <ole-navbar-item slot="navbar-start" href="/top">
         <router-link to="/top">Top</router-link>
       </ole-navbar-item>
@@ -21,7 +20,6 @@
       <ole-navbar-item href="https://github.com/vuejs/vue-hackernews-2.0">
         <ole-icon type="github" style="color: #333;"></ole-icon>
       </ole-navbar-item>
-
     </ole-navbar>
     <transition name="fade" mode="out-in">
       <router-view class="view"></router-view>
@@ -38,6 +36,11 @@ body
   // padding-top 55px
   color #34495e
   overflow-y scroll
+
+.logo
+  height 28px
+  padding-top 10px
+  padding-left  10px
 
 a
   color #34495e
@@ -78,11 +81,7 @@ a
     margin 0
     float right
 
-.logo
-  width 24px
-  margin-right 10px
-  display inline-block
-  vertical-align middle
+
 
 .view
   max-width 800px
